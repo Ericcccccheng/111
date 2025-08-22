@@ -1,0 +1,356 @@
+[
+  {
+    "key": "melbourne-cbd",
+    "label": "Melbourne CBD",
+    "file": "/geo/suburbs/melbourne-cbd.geojson",
+    "region": "city"
+  },
+  {
+    "key": "docklands",
+    "label": "Docklands",
+    "file": "/geo/suburbs/docklands.geojson",
+    "region": "city"
+  },
+  {
+    "key": "southbank",
+    "label": "Southbank",
+    "file": "/geo/suburbs/southbank.geojson",
+    "region": "city"
+  },
+  {
+    "key": "richmond",
+    "label": "Richmond",
+    "file": "/geo/suburbs/richmond.geojson",
+    "region": "east"
+  },
+  {
+    "key": "hawthorn",
+    "label": "Hawthorn",
+    "file": "/geo/suburbs/hawthorn.geojson",
+    "region": "east"
+  },
+  {
+    "key": "kew",
+    "label": "Kew",
+    "file": "/geo/suburbs/kew.geojson",
+    "region": "east"
+  },
+  {
+    "key": "camberwell",
+    "label": "Camberwell",
+    "file": "/geo/suburbs/camberwell.geojson",
+    "region": "east"
+  },
+  {
+    "key": "balwyn",
+    "label": "Balwyn",
+    "file": "/geo/suburbs/balwyn.geojson",
+    "region": "east"
+  },
+  {
+    "key": "surrey-hills",
+    "label": "Surrey Hills",
+    "file": "/geo/suburbs/surrey-hills.geojson",
+    "region": "east"
+  },
+  {
+    "key": "box-hill",
+    "label": "Box Hill",
+    "file": "/geo/suburbs/box-hill.geojson",
+    "region": "east"
+  },
+  {
+    "key": "blackburn",
+    "label": "Blackburn",
+    "file": "/geo/suburbs/blackburn.geojson",
+    "region": "east"
+  },
+  {
+    "key": "doncaster",
+    "label": "Doncaster",
+    "file": "/geo/suburbs/doncaster.geojson",
+    "region": "east"
+  },
+  {
+    "key": "glen-waverley",
+    "label": "Glen Waverley",
+    "file": "/geo/suburbs/glen-waverley.geojson",
+    "region": "east"
+  },
+  {
+    "key": "mount-waverley",
+    "label": "Mount Waverley",
+    "file": "/geo/suburbs/mount-waverley.geojson",
+    "region": "east"
+  },
+  {
+    "key": "ringwood",
+    "label": "Ringwood",
+    "file": "/geo/suburbs/ringwood.geojson",
+    "region": "east"
+  },
+  {
+    "key": "south-yarra",
+    "label": "South Yarra",
+    "file": "/geo/suburbs/south-yarra.geojson",
+    "region": "south"
+  },
+  {
+    "key": "prahran",
+    "label": "Prahran",
+    "file": "/geo/suburbs/prahran.geojson",
+    "region": "south"
+  },
+  {
+    "key": "toorak",
+    "label": "Toorak",
+    "file": "/geo/suburbs/toorak.geojson",
+    "region": "south"
+  },
+  {
+    "key": "st-kilda",
+    "label": "St Kilda",
+    "file": "/geo/suburbs/st-kilda.geojson",
+    "region": "south"
+  },
+  {
+    "key": "elwood",
+    "label": "Elwood",
+    "file": "/geo/suburbs/elwood.geojson",
+    "region": "south"
+  },
+  {
+    "key": "brighton",
+    "label": "Brighton",
+    "file": "/geo/suburbs/brighton.geojson",
+    "region": "south"
+  },
+  {
+    "key": "elsternwick",
+    "label": "Elsternwick",
+    "file": "/geo/suburbs/elsternwick.geojson",
+    "region": "south"
+  },
+  {
+    "key": "caulfield",
+    "label": "Caulfield",
+    "file": "/geo/suburbs/caulfield.geojson",
+    "region": "south"
+  },
+  {
+    "key": "bentleigh",
+    "label": "Bentleigh",
+    "file": "/geo/suburbs/bentleigh.geojson",
+    "region": "south"
+  },
+  {
+    "key": "moorabbin",
+    "label": "Moorabbin",
+    "file": "/geo/suburbs/moorabbin.geojson",
+    "region": "south"
+  },
+  {
+    "key": "cheltenham",
+    "label": "Cheltenham",
+    "file": "/geo/suburbs/cheltenham.geojson",
+    "region": "south"
+  },
+  {
+    "key": "chadstone",
+    "label": "Chadstone",
+    "file": "/geo/suburbs/chadstone.geojson",
+    "region": "south"
+  },
+  {
+    "key": "carnegie",
+    "label": "Carnegie",
+    "file": "/geo/suburbs/carnegie.geojson",
+    "region": "south"
+  },
+  {
+    "key": "oakleigh",
+    "label": "Oakleigh",
+    "file": "/geo/suburbs/oakleigh.geojson",
+    "region": "south"
+  },
+  {
+    "key": "murrumbeena",
+    "label": "Murrumbeena",
+    "file": "/geo/suburbs/murrumbeena.geojson",
+    "region": "south"
+  },
+  {
+    "key": "clayton",
+    "label": "Clayton",
+    "file": "/geo/suburbs/clayton.geojson",
+    "region": "south"
+  },
+  {
+    "key": "dandenong",
+    "label": "Dandenong",
+    "file": "/geo/suburbs/dandenong.geojson",
+    "region": "south"
+  },
+  {
+    "key": "footscray",
+    "label": "Footscray",
+    "file": "/geo/suburbs/footscray.geojson",
+    "region": "west"
+  },
+  {
+    "key": "yarraville",
+    "label": "Yarraville",
+    "file": "/geo/suburbs/yarraville.geojson",
+    "region": "west"
+  },
+  {
+    "key": "seddon",
+    "label": "Seddon",
+    "file": "/geo/suburbs/seddon.geojson",
+    "region": "west"
+  },
+  {
+    "key": "newport",
+    "label": "Newport",
+    "file": "/geo/suburbs/newport.geojson",
+    "region": "west"
+  },
+  {
+    "key": "williamstown",
+    "label": "Williamstown",
+    "file": "/geo/suburbs/williamstown.geojson",
+    "region": "west"
+  },
+  {
+    "key": "altona",
+    "label": "Altona",
+    "file": "/geo/suburbs/altona.geojson",
+    "region": "west"
+  },
+  {
+    "key": "sunshine",
+    "label": "Sunshine",
+    "file": "/geo/suburbs/sunshine.geojson",
+    "region": "west"
+  },
+  {
+    "key": "braybrook",
+    "label": "Braybrook",
+    "file": "/geo/suburbs/braybrook.geojson",
+    "region": "west"
+  },
+  {
+    "key": "point-cook",
+    "label": "Point Cook",
+    "file": "/geo/suburbs/point-cook.geojson",
+    "region": "west"
+  },
+  {
+    "key": "werribee",
+    "label": "Werribee",
+    "file": "/geo/suburbs/werribee.geojson",
+    "region": "west"
+  },
+  {
+    "key": "north-melbourne",
+    "label": "North Melbourne",
+    "file": "/geo/suburbs/north-melbourne.geojson",
+    "region": "north"
+  },
+  {
+    "key": "parkville",
+    "label": "Parkville",
+    "file": "/geo/suburbs/parkville.geojson",
+    "region": "north"
+  },
+  {
+    "key": "carlton",
+    "label": "Carlton",
+    "file": "/geo/suburbs/carlton.geojson",
+    "region": "north"
+  },
+  {
+    "key": "fitzroy",
+    "label": "Fitzroy",
+    "file": "/geo/suburbs/fitzroy.geojson",
+    "region": "north"
+  },
+  {
+    "key": "collingwood",
+    "label": "Collingwood",
+    "file": "/geo/suburbs/collingwood.geojson",
+    "region": "north"
+  },
+  {
+    "key": "brunswick",
+    "label": "Brunswick",
+    "file": "/geo/suburbs/brunswick.geojson",
+    "region": "north"
+  },
+  {
+    "key": "coburg",
+    "label": "Coburg",
+    "file": "/geo/suburbs/coburg.geojson",
+    "region": "north"
+  },
+  {
+    "key": "northcote",
+    "label": "Northcote",
+    "file": "/geo/suburbs/northcote.geojson",
+    "region": "north"
+  },
+  {
+    "key": "thornbury",
+    "label": "Thornbury",
+    "file": "/geo/suburbs/thornbury.geojson",
+    "region": "north"
+  },
+  {
+    "key": "preston",
+    "label": "Preston",
+    "file": "/geo/suburbs/preston.geojson",
+    "region": "north"
+  },
+  {
+    "key": "reservoir",
+    "label": "Reservoir",
+    "file": "/geo/suburbs/reservoir.geojson",
+    "region": "north"
+  },
+  {
+    "key": "ivanhoe",
+    "label": "Ivanhoe",
+    "file": "/geo/suburbs/ivanhoe.geojson",
+    "region": "north"
+  },
+  {
+    "key": "heidelberg",
+    "label": "Heidelberg",
+    "file": "/geo/suburbs/heidelberg.geojson",
+    "region": "north"
+  },
+  {
+    "key": "moonee-ponds",
+    "label": "Moonee Ponds",
+    "file": "/geo/suburbs/moonee-ponds.geojson",
+    "region": "north"
+  },
+  {
+    "key": "essendon",
+    "label": "Essendon",
+    "file": "/geo/suburbs/essendon.geojson",
+    "region": "north"
+  },
+  {
+    "key": "pascoe-vale",
+    "label": "Pascoe Vale",
+    "file": "/geo/suburbs/pascoe-vale.geojson",
+    "region": "north"
+  },
+  {
+    "key": "bundoora",
+    "label": "Bundoora",
+    "file": "/geo/suburbs/bundoora.geojson",
+    "region": "north"
+  }
+]
