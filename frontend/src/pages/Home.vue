@@ -1,17 +1,6 @@
 <template>
   <div class="page">
     <div class="container">
-      <!-- 顶部控制条：分页信息 + 刷新 -->
-      <div class="toolbar">
-        <div class="left">
-          <b>公司列表</b>
-          <span v-if="!loading" class="muted">（共 {{ total }} 条，当前第 {{ page }} / {{ Math.max(1, Math.ceil(total/pageSize)) }} 页）</span>
-        </div>
-        <div class="right">
-          <el-button size="small" @click="reload" :loading="loading">刷新</el-button>
-        </div>
-      </div>
-
       <!-- 列表 -->
       <el-card v-for="(c, i) in list" :key="i" class="row">
         <div class="row-main">
