@@ -12,8 +12,8 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/company': 'http://127.0.0.1:8360',
-      '/stream': 'http://127.0.0.1:8360'
+      '/company': { target: 'http://127.0.0.1:8360', changeOrigin: true },
+      '/stream':  { target: 'http://127.0.0.1:8360', changeOrigin: true }
     }
   },
   resolve: {

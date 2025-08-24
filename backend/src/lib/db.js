@@ -1,4 +1,11 @@
-require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv');
+
+// 先尝试加载仓库根的 .env（../../）
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+// 再尝试加载 backend/.env（当前工作目录）
+dotenv.config();
+
 const mongoose = require('mongoose');
 const EventEmitter = require('events');
 
@@ -6,7 +13,7 @@ const uri = process.env.MONGO_URI;
 const dbName = process.env.MONGO_DB_NAME || 'my_app_db';
 
 mongoose.set('strictQuery', true);
-mongoose.connect(uri, { dbName })
+mongoose.connect(uri, { dbName, serverSelectionTimeoutMS: 15000 })
   .then(() => console.log('[MongoDB] connected to', dbName))
   .catch(err => console.error('[MongoDB] connection error:', err));
 
