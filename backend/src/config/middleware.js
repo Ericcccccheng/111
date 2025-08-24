@@ -10,6 +10,15 @@ module.exports = [
     }
   },
   {
+    handle: 'cors',
+    options: {
+      origin: (ctx) => ctx.header.origin || '*',
+      credentials: true,
+      methods: 'GET,POST,PUT,DELETE,OPTIONS',
+      headers: 'Content-Type,Authorization'
+    }
+  },
+  {
     handle: 'resource',
     enable: isDev,
     options: {
