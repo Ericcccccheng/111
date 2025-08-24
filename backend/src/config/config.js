@@ -1,4 +1,5 @@
 // default config
 module.exports = {
-  workers: 1
+  port: process.env.PORT || 8360,
+  host: '0.0.0.0'
 };
