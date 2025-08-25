@@ -25,6 +25,7 @@ import * as L from 'leaflet'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
 const PUB_BASE = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '')
+const API_BASE = (import.meta.env.VITE_API_BASE || '').replace(/\/+$/, '')
 const route = useRoute()
 
 type RegionKey = 'city'|'east'|'west'|'south'|'north'
@@ -253,7 +254,8 @@ async function selectSub(s: Sub){
 
     // —— 选中某个 suburb：只显示该边界内的公司 —— //
     try {
-      const r = await fetch(`/company/suburb?key=${encodeURIComponent(s.key)}`, { headers:{ Accept:'application/json' } });
+      //const r = await fetch(`/company/suburb?key=${encodeURIComponent(s.key)}`, { headers:{ Accept:'application/json' } });
+      const r = await fetch(`${API_BASE}/company/suburb?key=${encodeURIComponent(s.key)}`, { headers:{ Accept:'application/json' } });
       const j = await r.json();
       if (j?.ok) drawMarkers(j.data);
       else markerLayer!.clearLayers();
@@ -326,7 +328,8 @@ async function loadCompaniesInBBox() {
   if (fetchAbort) fetchAbort.abort();
   fetchAbort = new AbortController();
 
-  const url = `/company/bbox?minLat=${minLat}&minLng=${minLng}&maxLat=${maxLat}&maxLng=${maxLng}`;
+  //const url = `/company/bbox?minLat=${minLat}&minLng=${minLng}&maxLat=${maxLat}&maxLng=${maxLng}`;
+  const url = `${API_BASE}/company/bbox?minLat=${minLat}&minLng=${minLng}&maxLat=${maxLat}&maxLng=${maxLng}`;
   try {
     const res = await fetch(url, { signal: fetchAbort.signal, headers:{ Accept:'application/json' } });
     if (!res.ok) { markerLayer!.clearLayers(); return; }
@@ -341,11 +344,13 @@ onMounted(()=>{
   initMap(); 
   flyCenter(regionDefs.city.center, regionDefs.city.zoom);
   try {
-    es = new EventSource('/stream/index');
+    //es = new EventSource('/stream/index');
+    es = new EventSource(`${API_BASE}/stream/index`);
     es.onmessage = async () => {
       // 数据变化时刷新当前视图对应的数据
       if (activeSub.value) {
-        const r = await fetch(`/company/suburb?key=${encodeURIComponent(activeSub.value.key)}`);
+        //const r = await fetch(`/company/suburb?key=${encodeURIComponent(activeSub.value.key)}`);
+        const r = await fetch(`${API_BASE}/company/suburb?key=${encodeURIComponent(activeSub.value.key)}`, { headers:{ Accept:'application/json' } });
         const j = await r.json();
         if (j?.ok) drawMarkers(j.data);
       } else if (map && map.getZoom() >= MARKER_ZOOM) {

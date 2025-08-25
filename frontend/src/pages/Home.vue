@@ -45,6 +45,9 @@ import { ElMessage } from 'element-plus'
 import { Location } from '@element-plus/icons-vue'
 import { apiGet } from '@/lib/api';
 
+const API_BASE = (import.meta.env.VITE_API_BASE || '').replace(/\/+$/, '')
+
+
 type Company = {
   name: string
   address: string
@@ -70,7 +73,9 @@ async function load(){
   loading.value = true
   error.value = null
   try{
-    const res = await apiGet(`company/index?page=${page.value}&limit=${pageSize.value}`);
+    //const res = await apiGet(`company/index?page=${page.value}&limit=${pageSize.value}`);
+    const res = await fetch(`${API_BASE}/company/index?page=${page.value}&limit=${pageSize.value}`)
+
     if(!res.ok){
       throw new Error(`HTTP ${res.status}`)
     }
