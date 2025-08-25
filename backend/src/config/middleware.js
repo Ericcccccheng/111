@@ -11,20 +11,29 @@ module.exports = [
   },
   {
     handle: 'cors',
-    options: {
-      origin: (ctx) => {
-        const origin = ctx.header.origin || '';
-        const allow = [
-          'http://localhost:5173',                   // 本地开发
-          'https://你的前端域名.vercel.app'             // 线上前端
-        ];
-        return allow.includes(origin) ? origin : ''; // 不匹配就不回 CORS 头
-      },
-      methods: 'GET,POST,PUT,DELETE,OPTIONS',
-      headers: 'Content-Type,Authorization',
-      credentials: true,            // 要带 cookie/凭证就必须是“回显”具体 origin，不能是 '*'
-      maxAge: 86400
-    }
+    options: isProd
+      // 线上：白名单 + 凭证
+      ? {
+          origin: (ctx) => {
+            const origin = ctx.header.origin || '';
+            const allow = [
+              'https://<你的vercel项目名>.vercel.app'
+            ];
+            return allow.includes(origin) ? origin : '';
+          },
+          credentials: true,
+          methods: 'GET,POST,PUT,DELETE,OPTIONS',
+          headers: 'Content-Type,Authorization',
+          maxAge: 86400
+        }
+      // 本地：无需凭证，直接 *
+      : {
+          origin: '*',
+          credentials: false,
+          methods: 'GET,POST,PUT,DELETE,OPTIONS',
+          headers: 'Content-Type,Authorization',
+          maxAge: 86400
+        }
   },
 
   {

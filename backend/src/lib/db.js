@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const EventEmitter = require('events');
 
-// 1) 仅当环境变量还没注入时，才尝试加载 .env（并静默）
+// 只在没注入 env 时静默加载 .env（先找根，再找 backend/）
 if (!process.env.MONGO_URI) {
   try { dotenv.config({ path: path.resolve(__dirname, '../../.env'), quiet: true }); } catch {}
   try { dotenv.config({ quiet: true }); } catch {}
@@ -14,12 +14,14 @@ const dbName = process.env.MONGO_DB_NAME || 'my_app_db';
 
 mongoose.set('strictQuery', true);
 
-// 2) 仅当还没连接时才连接
-if (mongoose.connection.readyState === 0) {
+// ★ 单进程只连接一次
+if (!global.__MONGO_CONNECTED__) {
+  global.__MONGO_CONNECTED__ = true;
   mongoose.connect(uri, { dbName, serverSelectionTimeoutMS: 15000 })
     .then(() => console.log('[MongoDB] connected to', dbName))
     .catch(err => console.error('[MongoDB] connection error:', err));
 }
+
 /**
  * 关键点：
  * - lat/lng 用 Number（浮点），默认 null（不要用 ''）
