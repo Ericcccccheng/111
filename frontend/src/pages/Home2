@@ -43,7 +43,6 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Location } from '@element-plus/icons-vue'
-import { apiGet } from '@/lib/api';
 
 type Company = {
   name: string
@@ -70,7 +69,9 @@ async function load(){
   loading.value = true
   error.value = null
   try{
-    const res = await apiGet(`company/index?page=${page.value}&limit=${pageSize.value}`);
+    const res = await fetch(`/company/index?page=${page.value}&limit=${pageSize.value}`, {
+      headers:{ Accept:'application/json' }
+    })
     if(!res.ok){
       throw new Error(`HTTP ${res.status}`)
     }

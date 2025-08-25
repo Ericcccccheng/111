@@ -24,6 +24,7 @@ import 'leaflet/dist/leaflet.css'
 import * as L from 'leaflet'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
+const PUB_BASE = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '')
 const route = useRoute()
 
 type RegionKey = 'city'|'east'|'west'|'south'|'north'
@@ -181,8 +182,10 @@ function flyCenter(center:[number,number], zoom:number){
 async function fetchLocalBoundary(s:Sub){
   // 先按 key，没命中再按 label 的 slug
   const tries = [
-    `/geo/suburbs/${s.key}.geojson`,
-    `/geo/suburbs/${slugify(s.label)}.geojson`,
+    //`/geo/suburbs/${s.key}.geojson`,
+    `${PUB_BASE}/geo/suburbs/${s.key}.geojson`,
+    //`/geo/suburbs/${slugify(s.label)}.geojson`,
+    `${PUB_BASE}/geo/suburbs/${slugify(s.label)}.geojson`,
   ]
   for(const url of tries){
     try{
